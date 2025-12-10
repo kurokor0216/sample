@@ -1,0 +1,165 @@
+.header{
+  display:flex;
+  justify-content: space-between;
+  align-items: center;
+  height:100px;
+  position:sticky;
+  z-index:1000;
+  top:0;
+  background-color: white;
+}
+
+.header-logo .header-logo-image {
+  width:150px;
+  cursor:pointer;
+}
+
+.header .header-nav-links{
+  display:flex;
+  justify-content: space-between;
+  gap:50px;
+}
+
+.header .header-nav-links a {
+  text-decoration: none;
+  color:black;
+  font-size:18px;
+  transition: background-color 0.25s;
+}
+
+.header .header-nav-links a:hover {
+  color: blueviolet;
+}
+
+.header .cart-hamburger-icon{
+  display:flex;
+  gap:20px;
+}
+
+.header .hamburger{
+  width:30px;
+  cursor:pointer;
+  display:none;
+}
+
+.header .cart-icon{
+  width:30px;
+  cursor: pointer;
+}
+
+.drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 300px;
+  height: 100vh;
+  background: #fff;
+  box-shadow: -2px 0 12px rgba(0,0,0,0.1);
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  z-index: 1001;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.drawer.open {
+  transform: translateX(0);
+}
+
+.drawer .close {
+  align-self: flex-end;
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.drawer ul {
+  list-style: none;
+  padding: 0;
+}
+
+.drawer li {
+  margin-bottom: 10px;
+}
+
+.drawer .checkout {
+  margin-top: 50px;
+  padding: 10px;
+  background: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+}
+
+.drawer-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.drawer-menu a {
+  text-decoration: none;
+  font-size: 25px;
+  color: black;
+}
+
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.35);
+  z-index: 1000;
+}
+
+@media (max-width: 1000px) { 
+
+  .header-nav-links {
+    display: none !important; 
+  }
+
+  .header .hamburger {
+    display: flex;
+  }
+}
+
+.cart-container{
+  display:flex;
+  flex-direction: column;
+  gap:30px;
+}
+.cart-container .cart-item-container{
+  display:grid;
+  grid-template-areas: 
+  "img name"
+  "img price"
+  "img quantity";
+  text-align: start;
+  column-gap:20px;
+}
+
+.cart-item-image{
+  grid-area: img;
+  height:120px;
+}
+
+.cart-item-name{
+  grid-area: name;
+}
+
+.cart-item-price{
+  grid-area: price;
+}
+
+.cart-item-quantity{
+  grid-area: quantity;
+  display:flex;
+  align-items: start;
+  justify-content: space-between;
+}
+
+
+
+
